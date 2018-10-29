@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <style>
+
+body{
+  margin:0;
+  padding:0;
+}
+
+        ul li{list-style-type: none}
+        #banner{
+            width: 1440px;
+            height: 400px;
+            overflow: hidden;
+        }
+        #banner ul{
+            width: 5760px;
+            overflow: hidden;
+        }
+        #banner ul>li{
+            width: 720px;
+            height: 400px;
+            float: left;
+        }
+        img{
+            max-width: 100%;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            $('.right').click(function () {
+                $("#banner ul").animate({marginLeft:"-720px"},600, function () {
+                    $("#banner ul>li").eq(0).appendTo($("#banner ul"));
+                    $("#banner ul").css('marginLeft','0px');
+                });
+            })
+            $('.left').click(function () {
+                $("#banner ul").css('marginLeft','-720px');
+                $("#banner ul>li").eq(3).prependTo($("#banner ul"));
+                $("#banner ul").animate({marginLeft:"0px"},600);
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="banner">
+        <ul>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/blackpink.jpg" alt="" width="720px" height="405px"/> </li>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/bts.jpg" alt="" width="720px" height="405px"/> </li>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/btob.jpg" alt="" width="720px" height="405px"/> </li>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/mamamoo.jpg" alt="" width="720px" height="405px"/> </li>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/ikon.jpg" alt="" width="720px" height="405px"/> </li>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/rv.jpg" alt="" width="720px" height="405px"/> </li>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/wannaone.jpg" alt="" width="720px" height="405px"/> </li>
+          <li><img src="file:///Users/wuyalin/Desktop/GitHub/Assignments/BG/gfriend.jpg" alt="" width="720px" height="405px"/> </li>
+
+        </ul>
+    </div>
+    <input type="button" value="left" class="left"/>
+    <input type="button" value="right" class="right"/>
+
+
+
+</body>
+</html>
